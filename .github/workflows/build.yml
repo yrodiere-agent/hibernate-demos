@@ -1,8 +1,10 @@
-name: Java CI with Maven
+name: GH Actions CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches-ignore:
+      # We don't want to run CI on branches for dependabot, just on the PR.
+      - 'dependabot/**'
   pull_request:
     branches: [ "main" ]
 
